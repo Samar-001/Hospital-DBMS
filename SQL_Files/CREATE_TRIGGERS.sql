@@ -1,0 +1,9 @@
+CREATE TRIGGER FORMER_EMP
+     AFTER DELETE ON Doctor
+     FOR EACH ROW
+     UPDATE EmpDetails SET NumOfEmp = NumOfEmp - 1;
+    
+CREATE TRIGGER FORMER_EMP1
+     AFTER INSERT ON Doctor
+     FOR EACH ROW
+     UPDATE EmpDetails SET NumOfEmp = NumOfEmp + 1;
